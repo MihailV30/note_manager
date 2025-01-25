@@ -24,7 +24,7 @@ def delete_note(notes_list):
     delete_criteria = input("Введите имя пользователя или заголовок для удаления заметки: ").lower()
     index = 0
     while index < len(notes_list): #цикл перебирающий список в поисках нужного критерия
-        if delete_criteria in notes_list[index]['Имя:'].lower() or delete_criteria in notes_list[index]['Заголовок:'].lower():
+        if delete_criteria in notes_list[index]['username'].lower() or delete_criteria in notes_list[index]['title'].lower():
             print("Заметка с выбранным критерием существует:",'\n',notes_list[index])
             if input("Вы уверены, что хотите удалить заметку? (да/нет) ")=="да":
                 del notes_list[index] #если нужный критерий найден словарь удаляется из списка
@@ -50,9 +50,13 @@ def delete_note(notes_list):
     return notes_list
 
 '''
-note_1 = {'Имя:': 'Алексей','Заголовок:': 'Список покупок','Описание заметки:': 'Купить продукты на неделю'}
-note_2 = {'Имя:': 'Мария','Заголовок:': 'Учеба','Описание заметки:': 'Подготовиться к экзамену'}
-note_3 = {'Имя:': 'Алексей', 'Заголовок:': 'Встреча', 'Описание заметки:': 'Встретиться с другом'}
-notes_list = [note_1,note_2,note_3] #список словарей заметок
+notes_list = [
+    {'username': 'Алексей', 'title': 'Список покупок', 'content': 'Купить продукты на неделю', 'status': 'новая',
+     'created_date': '27-11-2024', 'issue_date': '30-11-2024'},
+    {'username': 'Мария', 'title': 'Учеба', 'content': 'Подготовиться к экзамену', 'status': 'в процессе',
+     'created_date': '25-11-2024', 'issue_date': '01-12-2024'},
+    {'username': 'Иван', 'title': 'План работы', 'content': 'Завершить проект', 'status': 'выполнено',
+     'created_date': '20-11-2024', 'issue_date': '26-11-2024'}
+]
 '''
-#delete_note(notes_list) вызов закоментирован для корректной работы меню при импорте файла с ней
+#delete_note(notes_list) #вызов закоментирован для корректной работы меню при импорте файла с ней
