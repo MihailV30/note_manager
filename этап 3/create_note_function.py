@@ -8,7 +8,6 @@
 import datetime
 
 def validate_date(date_str): # проверяет корректность формата даты
-
     try:
         day, month, year = map(int, date_str.split('-'))
         datetime.date(year, month, day)
@@ -69,17 +68,7 @@ def create_note(notes_list): # Создает новую заметку и во�
     }
     notes_list.append(note)
 
-    note_summary = (
-        "------------------------------\n"
-        "Создана новая заметка:\n"
-        f"  Пользователь: {note['username']}\n"
-        f"  Заголовок: {note['title']}\n"
-        f"  Описание: {note['content']}\n"
-        f"  Статус: {note['status']}\n"
-        f"  Дата создания: {note['created_date']}\n"
-        f"  Дедлайн: {note['issue_date']}"
-    )
-    print("------------------------------")
+    print(('-' * 30))
     print("Заметка создана!")
     return notes_list
 

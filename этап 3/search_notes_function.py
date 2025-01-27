@@ -6,7 +6,7 @@ def search_notes(notes_list, keyword=None, status=None):
         return print("Список заметок пуст")
 
     print("Поиск заметки")
-    print("------------------------------")
+    print('-' * 30)
 
     key = input("Введите ключевое слово (оставьте пустым, если не нужно): ")
 
@@ -29,9 +29,9 @@ def search_notes(notes_list, keyword=None, status=None):
     status = input("Введите статус (оставьте пустым, если не нужно): ").strip().lower()
 
     if (len(keywords) == 0) and (not status): # если параметры поиск не введены то поиск останавливается
-        return print("------------------------------\nПоиск остановлен по причине отсутствия параметров поиска")
+        return print(('-' * 30) + "\nПоиск остановлен по причине отсутствия параметров поиска")
     else:
-        print("------------------------------\nПоиск выполняется по следующим параметрам:\nключевые слова:", (", ".join(keywords)),
+        print(('-' * 30) + "\nПоиск выполняется по следующим параметрам:\nключевые слова:", (", ".join(keywords)),
               "\nстатус:", status)
 
     for i, note in enumerate(notes_list):  # цикл перебора заметок
@@ -46,16 +46,16 @@ def search_notes(notes_list, keyword=None, status=None):
             results.append((i + 1, note))
 
     if results: # вывод результатов поиска
-        print("------------------------------\nНайдены заметки:\n------------------------------")
+        print(('-' * 30) + "\nНайдены заметки:\n" + ('-' * 30))
         for num, note in results:
             print(f"\nЗаметка №{num}:")
             print(f"Имя пользователя: {note['username']}")
             print(f"Заголовок: {note['title']}")
             print(f"Описание: {note['content']}")
             print(f"Статус: {note['status']}")
-            print("------------------------------")
+            print(('-' * 30) + "\n")
     else:
-        print("------------------------------")
+        print('-' * 30)
         print("Заметки, соответствующие запросу, не найдены.")
 
     return notes_list

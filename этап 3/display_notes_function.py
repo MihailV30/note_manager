@@ -38,7 +38,7 @@ def display_notes(notes_list, detail_level="full"):
 
     if notes_list: # проверка на пустой список после отмены операции
         print(Fore.GREEN + "Список заметок:" + Style.RESET_ALL)
-        print("------------------------------")
+        print('-' * 30)
 
         for i, note in enumerate(notes_list):
             print(Fore.CYAN + f"Заметка №{i + 1}:" + Style.RESET_ALL)
@@ -47,7 +47,7 @@ def display_notes(notes_list, detail_level="full"):
                     print(f"{translation.get(key, key)}: {value}")
             elif detail_level == "title":
                 print(f"{translation['title']}: {note['title']}")
-            print("------------------------------")
+            print('-' * 30)
     return notes_list
 '''
 notes_list = [
