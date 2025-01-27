@@ -54,6 +54,6 @@ def menu():
             print("\n")
             continue
         except Exception as e:
-            print(Fore.RED + f"Произошла непредвиденная ошибка: {e}" + Style.RESET_ALL) #Обработка других ошибок
+            print(Fore.RED + f"Произошла непредвиденная ошибка: {e}" + Style.RESET_ALL) # Обработка других ошибок
 
 notes_list = menu()

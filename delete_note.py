@@ -6,7 +6,6 @@
 Обновляет список заметок.'''
 
 def delete_note(notes_list):
-
     start_len = len(notes_list)
 
     if not notes_list:    #вывод списка заметок
